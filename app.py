@@ -26,3 +26,7 @@ def quadrado(n):
 @app.route('/home')
 def redirecionar_home():
     return redirect(url_for('home'))
+
+@app.route('/pagina')
+def pagina():
+    return render_template('pagina.html')
