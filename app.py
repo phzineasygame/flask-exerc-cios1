@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -22,3 +22,7 @@ def saudar(nome):
 def quadrado(n):
     resultado = n ** 2
     return f"{n}² = {resultado}"
+
+@app.route('/home')
+def redirecionar_home():
+    return redirect(url_for('home'))
