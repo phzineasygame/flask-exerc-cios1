@@ -30,3 +30,27 @@ def redirecionar_home():
 @app.route('/pagina')
 def pagina():
     return render_template('pagina.html')
+
+def buscar(item):
+    itens = ["banana", "maçã", "laranja", "uva"]  
+    encontrado = False  
+
+    
+    for i in itens:
+        if i == item:
+            encontrado = True
+            break
+
+    if encontrado:
+        return f"Item '{item}' encontrado!"
+    else:
+        return f"Item '{item}' não encontrado."
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+
